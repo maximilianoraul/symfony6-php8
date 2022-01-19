@@ -1,7 +1,7 @@
 FROM php:8.1-fpm
 
 #Add Symfony CLI repository
-RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list
+RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
 
 RUN apt-get update && apt-get install -y \
     git \
