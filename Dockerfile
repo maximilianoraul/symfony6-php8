@@ -9,12 +9,14 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libzip-dev \
-    php-xdebug \
     symfony-cli \
     && rm -rf /var/lib/apt/lists/*
 
 #PHP Extensions
 RUN docker-php-ext-install intl pdo pdo_mysql zip
+
+#xDebug
+RUN pecl install xdebug
 
 #Composer 2
 RUN curl -sS https://getcomposer.org/installer | php
