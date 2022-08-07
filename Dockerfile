@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libzip-dev \
+    php-xdebug \
     symfony-cli \
     && rm -rf /var/lib/apt/lists/*
 
