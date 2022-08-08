@@ -38,5 +38,6 @@ RUN mkdir /.symfony && chmod 777 -R /.symfony
 RUN mkdir /.symfony5 && chmod 777 -R /.symfony5
 RUN mkdir /.composer && chmod 777 -R /.composer
 RUN touch /.yarnrc && chmod 777 -R /.yarnrc
+RUN mkdir -p /.cache/yarn && chmod 777 -R /.cache/
 
 WORKDIR /app
