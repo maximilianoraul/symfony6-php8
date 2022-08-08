@@ -11,10 +11,14 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libzip-dev \
     symfony-cli \
+    nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 #PHP Extensions
 RUN docker-php-ext-install intl pdo pdo_mysql zip
+
+#Yarn
+RUN npm install --global yarn 
 
 #Xdebug
 RUN pecl install xdebug && docker-php-ext-enable xdebug
