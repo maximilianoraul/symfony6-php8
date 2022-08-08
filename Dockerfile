@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y \
 #PHP Extensions
 RUN docker-php-ext-install intl pdo pdo_mysql zip
 
-#xDebug
-RUN pecl install xdebug
+#Xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 #Composer 2
 RUN curl -sS https://getcomposer.org/installer | php
