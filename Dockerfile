@@ -3,6 +3,9 @@ FROM php:8.1-fpm
 #Add Symfony CLI repository
 RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
 
+#Add YARN repository
+RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+
 #Install packages
 RUN apt-get update && apt-get install -y \
     git \
