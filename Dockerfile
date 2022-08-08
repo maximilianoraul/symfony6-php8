@@ -30,7 +30,4 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 RUN mkdir /.symfony5 && chmod 777 -R /.symfony5
 RUN mkdir /.composer && chmod 777 -R /.composer
 
-#Copy symfony-cli autocompletion
-COPY ./console-events-terminate /etc/bash_completion.d/console-events-terminate
-
 WORKDIR /app
