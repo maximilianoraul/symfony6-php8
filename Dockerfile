@@ -37,6 +37,6 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 RUN mkdir /.symfony && chmod 777 -R /.symfony
 RUN mkdir /.symfony5 && chmod 777 -R /.symfony5
 RUN mkdir /.composer && chmod 777 -R /.composer
-RUN mkdir /.yarnrc && chmod 777 -R /.yarnrc
+RUN touch /.yarnrc && chmod 777 -R /.yarnrc
 
 WORKDIR /app
