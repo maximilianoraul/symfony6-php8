@@ -3,6 +3,7 @@ FROM php:8.1-fpm
 #Add Symfony CLI repository
 RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
 
+#Install packages
 RUN apt-get update && apt-get install -y \
     git \
     libicu-dev \
@@ -28,5 +29,8 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 #Enable local cache
 RUN mkdir /.symfony5 && chmod 777 -R /.symfony5
 RUN mkdir /.composer && chmod 777 -R /.composer
+
+#Copy symfony-cli autocompletion
+COPY ./console-events-terminate /etc/bash_completion.d/console-events-terminate
 
 WORKDIR /app
