@@ -40,4 +40,6 @@ RUN mkdir /.composer && chmod 777 -R /.composer
 RUN touch /.yarnrc && chmod 777 -R /.yarnrc
 RUN mkdir -p /.cache/yarn && chmod 777 -R /.cache/
 
+EXPOSE 80
+
 WORKDIR /app
